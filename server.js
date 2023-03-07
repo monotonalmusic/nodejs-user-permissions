@@ -1,3 +1,4 @@
+const { response } = require('express')
 const express = require('express')
 const app = express()
 const { users } = require('./data')
@@ -26,5 +27,10 @@ function setUser(req, res, next) {
   }
   next()
 }
+
+app.post('/gruppe-5', (req, res) => {
+  const data = req.body
+  .then(data => {res.send(data)})
+})
 
 app.listen(3000)
